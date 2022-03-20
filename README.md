@@ -1,8 +1,17 @@
-## How to use
+## How to use FontBot
 
-- Create a `sites.txt` file with list of sites, each site on a newline.
+Install Fontbot
+
+`npm install fontbot`
+
+Create a `sites.txt` file with list of sites, each site on a newline.
 
 ### Example:
-	 a.com
+     a.com
      b.com
-- Run `node -e 'require("./index.js").init("./sites.txt")'` from commandline
+
+Usage:
+     
+     const fontbot = require("fontbot");
+     fontbot.init("./sites.txt")
+     
