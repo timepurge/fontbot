@@ -28,7 +28,8 @@ const CONST = {
         'js',
         'gzip',
         'exe',
-        'svg'
+        'svg',
+        'pdf'
       ]
 }
 
@@ -60,9 +61,14 @@ const EOTParser = (filepath, onComplete) => {
     fs.readFile(filepath, function (err, contents) {
         
         eotparser(contents).then(function (result) {
-            if(result && result.familyName){
+            if(result && (result.familyName || result.fullName )){
                 onComplete({
-                    name: result.familyName,
+                    name: result.familyName?result.familyName:result.fullName,
+                    filepath
+                })
+            }else{
+                onComplete({
+                    name: CONST.UNKNOWN_FONTNAME,
                     filepath
                 })
             }
