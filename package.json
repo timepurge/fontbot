@@ -1,6 +1,6 @@
 {
   "name": "fontbot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "crawl and identify fonts used in a list of webpages",
   "main": "index.js",
   "scripts": {
